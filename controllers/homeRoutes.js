@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Grocery } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -78,5 +78,5 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+// would it be beneficial to add code block of router of grocery to home routes or user routes? 
 module.exports = router;

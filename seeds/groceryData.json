@@ -1,0 +1,14 @@
+[
+    {
+      "itemName": "onions",
+      "itemQuantity": "5"
+    },
+    {
+      "itemName": "chicken",
+      "itemQuantity": "1"
+    },
+    {
+        "itemName": "peppers",
+        "itemQuantity": "2"
+    }
+  ]

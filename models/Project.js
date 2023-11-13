@@ -15,17 +15,13 @@ Project.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    address: {
       type: DataTypes.STRING,
     },
-    date_created: {
-      type: DataTypes.DATE,
+    phone_number: {
+      type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: DataTypes.NOW,
-    },
-    needed_funding: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
     },
     user_id: {
       type: DataTypes.INTEGER,
