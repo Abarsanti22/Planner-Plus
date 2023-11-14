@@ -3,6 +3,7 @@ const userRoutes = require('./userRoutes');
 const projectRoutes = require('./projectRoutes');
 const groceryRoutes = require('./groceryroutes');
 
+// all of these routes are prefixed with '/api'
 router.use('/users', userRoutes);
 router.use('/projects', projectRoutes);
 router.use('/groceries', groceryRoutes);

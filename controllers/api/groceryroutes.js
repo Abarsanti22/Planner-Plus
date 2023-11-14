@@ -2,6 +2,24 @@ const router = require('express').Router();
 const { Grocery } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// all of the ENDPOINTS are prefixed with '/api/groceries
+router.get('/', withAuth, async (req, res) => {
+// what logic need  to happen (are we requesting data from the database?)
+// maybe we request all GROCERIES from the db
+try {
+  const allGroceries = await Grocery.findAll();
+  // if we need to SERIALIZE the db data
+  console.log('All groceries: ', allGroceries)
+
+  res.render('grocery', { grocerys: allGroceries })
+} catch(err) {
+  console.log("Error: ", err);
+  res.send({ msg: "Something went wrong!"})
+}
+
+})
+
+
 router.post('/', withAuth, async (req, res) => {
   try {
     const newGrocery = await Grocery.create({
