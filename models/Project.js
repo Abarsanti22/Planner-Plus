@@ -11,15 +11,15 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    Event_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    address: {
-      type: DataTypes.STRING,
+    Event_date: {
+      type: DataTypes.DATE,
     },
-    phone_number: {
-      type: DataTypes.INTEGER,
+    Event_time: {
+      type: DataTypes.TIME,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },

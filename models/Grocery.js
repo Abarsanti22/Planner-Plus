@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Grocery extends Model {}
 
-// Do we need to change file names because Grocery.js is the same in Models and in public JS.
+
 
 
 Grocery.init(
