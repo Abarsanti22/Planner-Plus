@@ -52,5 +52,5 @@ const loginFormHandler = async (event) => {
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
   
-????? HOW WOULD WE MODIFY THIS SO THAT GROCERY.JS WOULD FUNCTION IN PUBLIC/  WHEN THE USER CLICKS GROCERY LIST AFTER LOGGING IN
+// ????? HOW WOULD WE MODIFY THIS SO THAT GROCERY.JS WOULD FUNCTION IN PUBLIC/  WHEN THE USER CLICKS GROCERY LIST AFTER LOGGING IN
 
