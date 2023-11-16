@@ -1,17 +1,17 @@
 [
   {
-    "name": "Birthday Party",
-    "date": "11/11/24",
-    "time": "6:00 pm"
+    "recipient": "Robert",
+    "occasion": "Birthday",
+    "budget": "30.00"
   },
   {
-    "name": "Dinner",
-    "date": "12/22/24",
-    "time": "9:00 pm"
+    "recipient": "Dominic",
+    "occasion": "Graduation",
+    "budget": "50.00"
   },
   {
-    "name": "Surprise Party",
-    "date": "5/22/24",
-    "time": "8:00 pm"
+    "recipient": "Gia",
+    "occasion": "Dance recital",
+    "budget": "20.00"
   }
 ]

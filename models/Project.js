@@ -11,17 +11,17 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    recipient: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    date: {
-      type: DataTypes.DATE,
+   occasion: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    time: {
-      type: DataTypes.TIME,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
+    budget: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
