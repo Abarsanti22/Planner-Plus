@@ -3,9 +3,6 @@ const sequelize = require('../config/connection');
 
 class Grocery extends Model {}
 
-
-
-
 Grocery.init(
   {
     id: {

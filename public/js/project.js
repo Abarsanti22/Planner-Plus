@@ -1,53 +1,47 @@
-const loginFormHandler = async (event) => {
-    event.preventDefault();
-  
-    // Collect values from the login form
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
-      // Send a POST request to the API endpoint
-      const response = await fetch('/api/users/login', {
-        method: 'POST',
-        body: JSON.stringify({ email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        // If successful, redirect the browser to the profile page
-        document.location.replace('/project');
-      } else {
-        alert(response.statusText);
-      }
+const projectFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#project-name').value.trim();
+  const date = document.querySelector('#project-date').value.trim();
+  const time = document.querySelector('#project-time').value.trim();
+
+  if (name && date && time) {
+    const response = await fetch(`/api/projects`, {
+      method: 'POST',
+      body: JSON.stringify({ name, date, time }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      document.location.replace('/project');
+    } else {
+      alert('Failed to create project');
     }
-  };
-  
-  const signupFormHandler = async (event) => {
-    event.preventDefault();
-  
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (name && email && password) {
-      const response = await fetch('/api/users', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-  
-      if (response.ok) {
-        document.location.replace('/project');
-      } else {
-        alert(response.statusText);
-      }
+  }
+};
+
+const delButtonHandler = async (event) => {
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/projects/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/project');
+    } else {
+      alert('Failed to delete project');
     }
-  };
-  
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
-  
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  }
+};
+
+document
+  .querySelector('.new-project-form')
+  .addEventListener('submit', projectFormHandler);
+
+document
+  .querySelector('.project-list')
+  .addEventListener('click', delButtonHandler);

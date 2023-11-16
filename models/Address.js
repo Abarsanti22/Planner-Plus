@@ -3,8 +3,6 @@ const sequelize = require('../config/connection');
 
 class Address extends Model {}
 
-
-
 Address.init(
   {
     id: {

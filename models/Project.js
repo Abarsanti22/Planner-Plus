@@ -11,14 +11,14 @@ Project.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Event_name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Event_date: {
+    date: {
       type: DataTypes.DATE,
     },
-    Event_time: {
+    time: {
       type: DataTypes.TIME,
       allowNull: false,
       defaultValue: DataTypes.NOW,

@@ -19,33 +19,34 @@
         <button type="submit" class="btn btn-primary">Event List</button>
       </div> --}}
 
-    <form class="form new-grocery-form">
+    <form class="form new-project-form">
       <div class="form-group">
-        <label for="grocery-name">Event name:</label>
-        <input class="form-input" type="text" id="grocery-name" name="grocery-name" />
+        <label for="project-name">Event name:</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
-        <label for="grocery-address">Event date:</label>
-        <input class="form-input" type="number" id="grocery-address" name="grocery-address" />
+        <label for="project-date">Event date:</label>
+        <input class="form-input" type="text" id="project-date" name="project-date" />
       </div>
       <div class="form-group">
-        <label for="grocery-desc">Event time:</label>
-        <textarea class="form-input" id="grocery-desc" name="grocery-desc"></textarea>
+        <label for="project-time">Event time:</label>
+        <textarea class="form-input" id="project-time" name="project-time"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Add</button>
+        </a>
       </div>
     </form>
   </div>
 
   {{#if projects.length}}
-  <div class="col-md-6 grocery-list">
+  <div class="col-md-6 project-list">
     <h3>Current Schedule:</h3>
 
     {{#each projects as |project|}}
     <div classqui="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.Event_name}}</a></h4>
+        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
@@ -56,4 +57,42 @@
   {{/if}}
 </div>
 
+<div class="text-center">
+{{!-- Loop over each object in the projects array  --}}
+{{#each projects as |project| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2> 
+{{!-- Call helper function with triple brackets to render the emoji span as HTML  --}}
+{{{get_emoji}}}
+      <a href="/project/{{project.id}}">{{project.name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="dollar-amount">{{project.date}}</span>
+      needed!
+    </p>
+    <p>Created by {{project.time}} on {{project.name}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{project.date}} 
+ </p>
+  </div>
+</div>
+{{/each}} 
+  <p>{{date}}</p>
+  <p>Created by {{user.name}} on {{time}}</p>
+  <p>
+    <span for="img" aria-label="money"></span>
+    <span class="dollar-amount">{{name}}</span>
+    
+  </p>
+  {{!-- <p>
+    <button class="btn btn-primary">Fund this Project!</button>
+  </p> --}}
+</div>
+
 <script src="./js/project.js"></script>
+

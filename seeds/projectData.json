@@ -1,17 +1,17 @@
 [
   {
-    "Event_name": "Birthday Party",
-    "Event_date": "11/11/24",
-    "Event_time": "6:00 pm"
+    "name": "Birthday Party",
+    "date": "11/11/24",
+    "time": "6:00 pm"
   },
   {
-    "Event_name": "Dinner",
-    "Event_date": "12/22/24",
-    "Event_time": "9:00 pm"
+    "name": "Dinner",
+    "date": "12/22/24",
+    "time": "9:00 pm"
   },
   {
-    "Event_name": "Surprise Party",
-    "Event_date": "5/22/24",
-    "Event_time": "8:00 pm"
+    "name": "Surprise Party",
+    "date": "5/22/24",
+    "time": "8:00 pm"
   }
 ]
